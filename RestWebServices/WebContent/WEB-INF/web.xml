@@ -16,4 +16,15 @@
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 
+	<!-- Filter Is For Basic Authentication For Restful WebServices Tested Working Commiting because of easy to test other web services
+	Without Authentication -->
+
+	<!-- <filter>
+		<filter-name>AuthenticationFilter</filter-name>
+		<filter-class>org.bhargav.rest.RestAuthenticationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/rest/*</url-pattern>
+	</filter-mapping> -->
 </web-app>
