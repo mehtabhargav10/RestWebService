@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 import org.bhargav.model.EmployeeBean;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -39,8 +40,8 @@ public class EmployeeDAO {
 		Session session = SessionUtil.getSession();
 		Transaction transaction = session.beginTransaction();
 		String hql = "delete from Employee where id = :id";
-		TypedQuery<Employee> query = session.createQuery(hql, Employee.class);
-		query.setParameter("id", id);
+		Query query = session.createQuery(hql);
+		query.setInteger("id",id);
 		int rowCount = query.executeUpdate();
 		System.out.println("Rows affected: " + rowCount);
 		transaction.commit();
